@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="helloWorld" >
+<head>
+    
+    <title>Hello World</title>
+    <script src="angular.js"></script>
+
+    <script>
+        angular.module("helloWorld", []); // o [] é a injeção de novos modulos //-> assim cria o modulo
+        angular.module("helloWorld").controller("helloWorldCtrl", function ($scope) { //-> sem os [] localiza o modulo
+            $scope.message = "Hello World!";
+        });
+    </script>
+</head>
+<body>
+
+    <div ng-controller="helloWorldCtrl">
+        {{ message }}
+    </div>
+    
+</body>
+</html>
