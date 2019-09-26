@@ -1,0 +1,86 @@
+{
+  "contatos": [
+    {
+      "id": 1,
+      "nome": "Bruno",
+      "telefone": "9999-2222",
+      "data": "2019-04-12T125346.204Z",
+      "operadora": {
+        "nome": "Oi",
+        "codigo": 14,
+        "categoria": "Celular"
+      }
+    },
+    {
+      "id": 2,
+      "nome": "Sandra",
+      "telefone": "9999-3333",
+      "data": "2019-04-12T125346.204Z",
+      "operadora": {
+        "nome": "Vivo",
+        "codigo": 15,
+        "categoria": "Celular"
+      }
+    },
+    {
+      "id": 3,
+      "nome": "Mariana",
+      "telefone": "9999-9999",
+      "data": "2019-04-12T125346.204Z",
+      "operadora": {
+        "nome": "Tim",
+        "codigo": 41,
+        "categoria": "Celular"
+      }
+    },
+    {
+      "nome": "aaaaaaaaaa",
+      "telefone": "1111-1111",
+      "operadora": {
+        "nome": "Embratel",
+        "codigo": 21,
+        "categoria": "Fixo",
+        "preco": 2
+      },
+      "data": "2019-09-25T23:46:03.558Z",
+      "id": 4
+    }
+  ],
+  "operadoras": [
+    {
+      "id": 1,
+      "nome": "Oi",
+      "codigo": 14,
+      "categoria": "Celular",
+      "preco": 2
+    },
+    {
+      "id": 2,
+      "nome": "Vivo",
+      "codigo": 15,
+      "categoria": "Celular",
+      "preco": 1
+    },
+    {
+      "id": 3,
+      "nome": "Tim",
+      "codigo": 41,
+      "categoria": "Celular",
+      "preco": 3
+    },
+    {
+      "id": 4,
+      "nome": "Gvt",
+      "codigo": 25,
+      "categoria": "Fixo",
+      "preco": 1
+    },
+    {
+      "id": 5,
+      "nome": "Embratel",
+      "codigo": 21,
+      "categoria": "Fixo",
+      "preco": 2
+    }
+  ]
+}
