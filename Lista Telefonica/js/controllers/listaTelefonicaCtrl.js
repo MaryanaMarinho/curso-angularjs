@@ -1,7 +1,5 @@
-angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, $filter, $http) {
+angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, $filter, contatosAPI, operadorasAPI, serialGenerator) {
     $scope.app = "Lista Telefonica";
-    var APICONTATOS = "http://localhost:3000/contatos";
-    var APIOPERADORAS = "http://localhost:3000/operadoras"
     $scope.contatos = [
         // filter no controller é mais perfomatico
         // {nome: $filter('uppercase')("Pedro"), telefone: "0980808980808", data: new Date(), operadora: { nome: "Oi", codigo: 14, categoria: "Celular"}},
@@ -17,21 +15,22 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
     ];
 
     var carregarContatos = function () {
-        $http.get(APICONTATOS).then(function (response) {
+        contatosAPI.getContatos().then(function (response) {
             $scope.contatos = response.data;
         });
     };
 
     var carregarOperadoras = function () {
-        $http.get(APIOPERADORAS).then(function (response) {
+        operadorasAPI.getOperadoras().then(function (response) {
             $scope.operadoras = response.data;
         });
     };
 
     $scope.adicionarContato = function (contato) {
+        contato.serial = serialGenerator.generate();
         contato.data = new Date();
         // $scope.contatos.push(angular.copy(contato));
-        $http.post(APICONTATOS, contato).then(function (data) {
+        contatosAPI.saveContato(contato).then(function (data) {
             delete $scope.contato;
             $scope.contatoForm.$setPristine();
             carregarContatos();

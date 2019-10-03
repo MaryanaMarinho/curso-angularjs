@@ -9,6 +9,11 @@
     <script src="lib/angular/angular.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers/listaTelefonicaCtrl.js"></script>
+    <script src="js/services/contatosAPIService.js"></script>
+    <script src="js/services/operadorasAPIService.js"></script>
+    <script src="js/value/configValue.js"></script>
+    <script src="js/services/serialGeneratorService.js"></script>
+    <script src="js/config/serialGenerator.js"></script>
     
 </head>
 <body ng-controller="listaTelefonicaCtrl">
@@ -19,13 +24,16 @@
         <table ng-show="contatos.length > 0" class="table table">
             <tr>
                 <th></th>
+                <th>Serial</th>
                 <th><a href="" ng-click="ordenarPor('nome')"> Nome </a></th>
                 <th><a href="" ng-click="ordenarPor('telefone')"> Telefone </a></th>
                 <th>Operadora</th>
                 <th>Data</th>
             </tr>
             <tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos | filter:criterioDeBusca | orderBy:criterioDeBusca:direcaoDaOrdenacao">
+                
                 <td><input type="checkbox" ng-model="contato.selecionado"></td>
+                <td>{{contato.serial}}</td>
                 <!-- filtros nem sempre filtram, eles podem transformar o texto -->
                 <td>{{contato.nome}}</td>
                 <td>{{contato.telefone}}</td>
